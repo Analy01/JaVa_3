@@ -8,6 +8,7 @@ package anita.cuentas.controladores;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,9 +25,9 @@ public class ServletCrearCuenta extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-   //Aqui ya se creo una cuenta
-        out.println("<center>");
-        out.println("Cuenta creada con éxito");
-        out.println("</center>");
+        
+RequestDispatcher despachador=request.getRequestDispatcher("/chico-hermoso.jsp");
+    despachador.forward(request, response);
+   
         }
     }
